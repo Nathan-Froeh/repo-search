@@ -1,0 +1,33 @@
+
+.repo-list-item {
+  border: black solid 1px;
+  margin: 20px;
+  padding: 20px;
+
+  h3,
+  p {
+    margin: 10px 0;
+  }
+
+  .header {
+    display: flex;
+
+    .stars {
+      margin: 10px;
+    }
+
+    .name {
+      flex-grow: 1;
+    }
+  }
+
+  .main {
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
