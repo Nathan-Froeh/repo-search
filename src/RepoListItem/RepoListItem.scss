@@ -1,24 +1,22 @@
 
-.repo-list-item {
-  border: black solid 1px;
-  margin: 20px;
-  padding: 20px;
-
   h3,
   p {
     margin: 10px 0;
   }
+  .stars {
+    margin: 10px;
+  }
+
+  .name {
+    flex-grow: 1;
+  }
+
+.repo-list-item {
 
   .header {
     display: flex;
 
-    .stars {
-      margin: 10px;
-    }
-
-    .name {
-      flex-grow: 1;
-    }
+    
   }
 
   .main {

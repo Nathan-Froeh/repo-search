@@ -1,17 +1,17 @@
 
 import './RepoListItem.scss';
 
-function RepoListItem({repo}) {
-  let languages = (<div className="language">None</div>);
+function RepoListItem({repo, selectRepo}) {
+  let languages = (<div className="language">No Language Listed</div>);
 
   if(repo.language) {
     languages = repo.language.split(" ").map(language => (
-      <div className="language">{language}</div>
+      <div className="language" key={language}>{language}</div>
     ))
   }
 
   return (
-    <div className="repo-list-item">
+    <div className="repo-list-item card" onClick={() => selectRepo(repo)}>
       <div className="header">
         <h3 className="name">{repo.full_name}</h3>
         <p className="stars">{repo.stargazers_count}</p>
