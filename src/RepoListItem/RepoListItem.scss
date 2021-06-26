@@ -4,7 +4,10 @@
     margin: 10px 0;
   }
   .stars {
-    margin: 10px;
+    margin: 10px 20px 10px 10px;
+  }
+  .language {
+    font-weight: 300;
   }
 
   .name {
@@ -15,8 +18,11 @@
 
   .header {
     display: flex;
+    flex-wrap: wrap;
 
-    
+    div {
+      display: flex;
+    }
   }
 
   .main {

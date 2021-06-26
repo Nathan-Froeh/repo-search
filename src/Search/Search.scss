@@ -1,0 +1,44 @@
+
+.search {
+  margin: 1rem;
+  display: flex;
+  justify-content: right;
+  align-items: baseline;
+
+  .main-logo {
+    display: block;
+  }
+  
+  .mobile-logo {
+    display: none;
+  }
+
+  h1 {
+    margin: 1rem;
+  }
+
+  form {
+    width: 50%;
+    min-width: 250px;
+  }
+
+  .search-bar {
+    display: flex;
+
+    input {
+      flex-grow: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .search {
+    .main-logo {
+      display: none;
+    }
+
+    .mobile-logo {
+      display: block;
+    }
+  }
+}

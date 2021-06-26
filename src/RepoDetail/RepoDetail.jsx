@@ -1,6 +1,8 @@
 
 import {useHistory} from "react-router-dom";
 import './RepoDetail.scss';
+import {DateTime} from 'luxon';
+
 
 function RepoDetail({repo}) {
   let history = useHistory();
@@ -26,8 +28,8 @@ function RepoDetail({repo}) {
       <div className="repo card">
         <section className="header">
           <h3 className="name">{repo.full_name}</h3>
-          <p className="stars">{repo.stargazers_count}</p>
-          <p className="date-updated">Updated {repo.updated_at}</p>
+          <p className="stars">{repo.stargazers_count} Stars</p>
+          <p className="date-updated">Updated {DateTime.fromJSDate(new Date(repo.updated_at)).toRelative()}</p>
         </section>
         {languages}
 

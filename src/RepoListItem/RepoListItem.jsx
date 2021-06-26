@@ -1,5 +1,6 @@
 
 import './RepoListItem.scss';
+import {DateTime} from 'luxon';
 
 function RepoListItem({repo, selectRepo}) {
   let languages = (<div className="language">No Language Listed</div>);
@@ -14,8 +15,10 @@ function RepoListItem({repo, selectRepo}) {
     <div className="repo-list-item card" onClick={() => selectRepo(repo)}>
       <div className="header">
         <h3 className="name">{repo.full_name}</h3>
-        <p className="stars">{repo.stargazers_count}</p>
-        <p className="date-updated">Updated {repo.updated_at}</p>
+        <div>
+          <p className="stars">{repo.stargazers_count} Stars</p>
+          <p className="date-updated">Updated {DateTime.fromJSDate(new Date(repo.updated_at)).toRelative()}</p>
+        </div>
       </div>
 
       <div className="main">
