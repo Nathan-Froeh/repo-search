@@ -9,10 +9,10 @@ function Search(props) {
   const [sortOrder, setSortOrder] = useState(sortOptions[0].order);
   const [languageValue, setLanguageValue] = useState("");
 
-  function getSearchResults(event) {
+  function getSearchResults(event, quickSearch) {
     event.preventDefault();
     const searchParams = {
-      q: `${searchValue}${languageValue ? '+language:'+ languageValue : ''}`,
+      q: `${quickSearch ? quickSearch : searchValue}${languageValue ? '+language:'+ languageValue : ''}`,
       sort: sortValue,
       order: sortOrder
     };
@@ -27,6 +27,11 @@ function Search(props) {
       })
   }
 
+  function quickSearch() {
+    setSearchValue("nathan-froeh/repo-search");
+    getSearchResults({preventDefault: () => {}}, "nathan-froeh/repo-search");
+  }
+
   function handleSort(sort) {
     const option = JSON.parse(sort)
     setSortValue(option.value)
@@ -35,8 +40,8 @@ function Search(props) {
 
   return (
     <section className="search">
-      <h1 className="main-logo">RepoSearch</h1>
-      <h1 className="mobile-logo">RS</h1>
+      <h1 className="main-logo" onClick={quickSearch}>RepoSearch</h1>
+      <h1 className="mobile-logo" onClick={quickSearch}>RS</h1>
       <form onSubmit={getSearchResults}>
         <section className="search-bar">
           <input 

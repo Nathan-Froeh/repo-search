@@ -1,16 +1,40 @@
 
 .repo-detail {
 
-  .back {
-    margin: 2rem 0 0 2rem;
+  .repo-detail-header {
+    display: flex;
+    justify-content: space-between;
+
+    .back,
+    a {
+      margin: 2rem 2rem 0 2rem;
+    }
+
   }
+
 
   .header {
     display: flex;
 
+    .image-wrapper {
+      flex-grow: 1;
+    }
+
+    img {
+      height: 42px;
+      width: 42px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
     div {
       display: flex;
     }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 

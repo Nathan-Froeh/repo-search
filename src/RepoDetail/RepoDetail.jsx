@@ -11,7 +11,6 @@ function RepoDetail({repo}) {
     history.push('/');
   }
   if(!repo) goBack();
-
   if(repo && repo.language) {
     languages = repo.language.split(" ").map(language => (
       <div className="language" key={language}>{language}</div>
@@ -21,13 +20,22 @@ function RepoDetail({repo}) {
   return (
     <div className="repo-detail">
 
-      <button className="back" onClick={goBack}>Back</button>
+      <div className="repo-detail-header">
+        <button className="back" onClick={goBack}>Back</button>
+
+        <a href="https://github.com/Nathan-Froeh/repo-search" target="_blank" rel="noreferrer">
+          Check out my repo
+        </a>
+      </div>
 
     {
       repo &&
       <div className="repo card">
         <section className="header">
-          <h3 className="name">{repo.full_name}</h3>
+          <div className="image-wrapper">
+            <img src={repo.owner.avatar_url} alt="avatar"/>
+            <h3 className="name">{repo.full_name}</h3>
+          </div>
           <div>
             <p className="stars">{repo.stargazers_count} Stars</p>
             <p className="date-updated">
@@ -39,6 +47,10 @@ function RepoDetail({repo}) {
 
         <section>
           <p>{repo.description}</p>
+        </section>
+
+        <section className="footer">
+          <a href={repo.html_url} target="_blank" rel="noreferrer">View Repo</a>
         </section>
       </div>
 
