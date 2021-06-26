@@ -55,5 +55,19 @@
     .mobile-logo {
       display: block;
     }
+
+    .search-settings {
+      flex-wrap: wrap;
+
+      div {
+        width: 100%;
+        display: flex;
+        margin: 10px 0 10px 0;
+
+        select {
+          flex-grow: 1;
+        }
+      }
+    }
   }
 }

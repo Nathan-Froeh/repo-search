@@ -7,5 +7,33 @@
 
   .header {
     display: flex;
+
+    div {
+      display: flex;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .repo-detail {
+
+    .header {
+      flex-wrap: wrap;
+      h3 {
+        margin: 10px 0 0 0;
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        p {
+          font-size: 12px;
+          margin: 0 0 10px 0;
+        }
+      }
+    }
   }
 }

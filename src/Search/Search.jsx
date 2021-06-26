@@ -23,11 +23,12 @@ function Search(props) {
         // there is no language parameter so I will filter the returned repos by the selected language
         const filteredRepos = githubResults.data.items
           .filter(repo => (
-            repo.language && repo.language.includes(languageValue) || languageValue === ""));
+            (repo.language && repo.language.includes(languageValue)) || languageValue === ""));
         props.onSubmit(filteredRepos)
       }).catch(error => {
         props.onSubmit(null);
         props.onError(error.response.data.message);
+        console.error(error)
       })
   }
 
@@ -49,7 +50,7 @@ function Search(props) {
             placeholder="Search" 
             value={searchValue} 
             onChange={e => setSearchValue(e.target.value)}/>
-          <button type="submit">Submit</button>
+          <button type="submit">Search</button>
         </section>
         <section className="search-settings">
           <div>

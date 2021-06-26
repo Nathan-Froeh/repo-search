@@ -7,17 +7,17 @@ import {DateTime} from 'luxon';
 function RepoDetail({repo}) {
   let history = useHistory();
   let languages = (<div className="language">No Language Listed</div>);
+  function goBack() {
+    history.push('/');
+  }
+  if(!repo) goBack();
 
-  if(repo.language) {
+  if(repo && repo.language) {
     languages = repo.language.split(" ").map(language => (
       <div className="language" key={language}>{language}</div>
     ))
   }
 
-  function goBack() {
-    history.push('/');
-  }
-  if(!repo) goBack();
   return (
     <div className="repo-detail">
 
@@ -28,8 +28,12 @@ function RepoDetail({repo}) {
       <div className="repo card">
         <section className="header">
           <h3 className="name">{repo.full_name}</h3>
-          <p className="stars">{repo.stargazers_count} Stars</p>
-          <p className="date-updated">Updated {DateTime.fromJSDate(new Date(repo.updated_at)).toRelative()}</p>
+          <div>
+            <p className="stars">{repo.stargazers_count} Stars</p>
+            <p className="date-updated">
+              Updated {DateTime.fromJSDate(new Date(repo.updated_at)).toRelative()}
+            </p>
+          </div>
         </section>
         {languages}
 
