@@ -1,5 +1,5 @@
 
-import './App.css';
+import './App.scss';
 import React, {useState} from 'react';
 import Search from './Search/Search';
 import RepoListItem from './RepoListItem/RepoListItem';
@@ -13,7 +13,8 @@ import {
 function App(props) {
   let history = useHistory();
   const [selectedRepo, setSelectedRepo] = useState();
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(undefined);
+  const [error, setError] = useState(null);
   let reposToRender;
 
   if(searchResults) {
@@ -37,7 +38,23 @@ function App(props) {
         </Route>
 
         <Route exact path="/">
-          <Search onSubmit={githubResults => setSearchResults(githubResults)}></Search>
+          <Search 
+            onSubmit={githubResults => setSearchResults(githubResults)} 
+            onError={error => setError(error)}>
+          </Search>
+          <section className="message-wrapper">
+            {error && 
+              <div className="error">
+                <h2>Error</h2>
+                <p>{error}</p>
+              </div>}
+
+            {searchResults === undefined && 
+              <p className="message">Try searching for GitHub repos!</p>}
+
+            {searchResults && searchResults.length === 0 && 
+              <p className="message">Sorry, no GitHub repos match your search. Try another!</p>}
+          </section>
           {reposToRender}
         </Route>
 
