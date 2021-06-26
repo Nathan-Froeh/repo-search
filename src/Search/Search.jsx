@@ -71,4 +71,4 @@ function Search(props) {
     </section>
   )
 }
-export default (Search);
+export default Search;

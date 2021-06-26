@@ -32,4 +32,4 @@ function RepoListItem({repo, selectRepo}) {
   )
 }
 
-export default (RepoListItem);
+export default RepoListItem;
