@@ -32,11 +32,11 @@ function App(props) {
     <div className="App">
       <Switch>
 
-        <Route path="/repo">
+        <Route path="/repo-search/repo">
           <RepoDetail repo={selectedRepo}></RepoDetail>
         </Route>
 
-        <Route exact path="/">
+        <Route exact path="/repo-search/">
           <Search 
             onSubmit={githubResults => setSearchResults(githubResults)} 
             onError={error => setError(error)}>
