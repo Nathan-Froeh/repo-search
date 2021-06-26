@@ -1,4 +1,4 @@
-# Getting Started
+# Getting Started - [View Live Project](https://nathan-froeh.github.io/repo-search/)
 
 1) Clone or Fork the repo
 
@@ -8,7 +8,6 @@
 
 4) Run terminal command ```npm start``` to run the app, a new browser window should pop up at url `http://localhost:3000/repo-search/`
 
-App is also deployed to [GitHub Pages](https://nathan-froeh.github.io/repo-search/)
 
 
 ## Required api call documentation
