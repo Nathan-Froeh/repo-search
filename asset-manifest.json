@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/repo-search/static/css/main.2b3878b5.chunk.css",
+    "main.js": "/repo-search/static/js/main.fcfa62bd.chunk.js",
+    "main.js.map": "/repo-search/static/js/main.fcfa62bd.chunk.js.map",
+    "runtime-main.js": "/repo-search/static/js/runtime-main.fa656adb.js",
+    "runtime-main.js.map": "/repo-search/static/js/runtime-main.fa656adb.js.map",
+    "static/js/2.fd5c8b10.chunk.js": "/repo-search/static/js/2.fd5c8b10.chunk.js",
+    "static/js/2.fd5c8b10.chunk.js.map": "/repo-search/static/js/2.fd5c8b10.chunk.js.map",
+    "static/js/3.2dc093ee.chunk.js": "/repo-search/static/js/3.2dc093ee.chunk.js",
+    "static/js/3.2dc093ee.chunk.js.map": "/repo-search/static/js/3.2dc093ee.chunk.js.map",
+    "index.html": "/repo-search/index.html",
+    "static/css/main.2b3878b5.chunk.css.map": "/repo-search/static/css/main.2b3878b5.chunk.css.map",
+    "static/js/2.fd5c8b10.chunk.js.LICENSE.txt": "/repo-search/static/js/2.fd5c8b10.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fa656adb.js",
+    "static/js/2.fd5c8b10.chunk.js",
+    "static/css/main.2b3878b5.chunk.css",
+    "static/js/main.fcfa62bd.chunk.js"
+  ]
+}
