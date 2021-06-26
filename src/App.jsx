@@ -26,7 +26,6 @@ function App(props) {
   function selectRepo(repo) {
     setSelectedRepo(repo)
     history.push(`/repo/${repo.id}`);
-    console.log('repo', repo)
   }
 
   return (
