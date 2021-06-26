@@ -12,19 +12,14 @@ function Search(props) {
   function getSearchResults(event) {
     event.preventDefault();
     const searchParams = {
-      q: searchValue,
+      q: `${searchValue}${languageValue ? '+language:'+ languageValue : ''}`,
       sort: sortValue,
       order: sortOrder
     };
     search(searchParams)
       .then(githubResults => {
         props.onError(null);
-        // For the specified api call https://docs.github.com/en/rest/reference/search#search-repositories--parameters
-        // there is no language parameter so I will filter the returned repos by the selected language
-        const filteredRepos = githubResults.data.items
-          .filter(repo => (
-            (repo.language && repo.language.includes(languageValue)) || languageValue === ""));
-        props.onSubmit(filteredRepos)
+        props.onSubmit(githubResults.data.items)
       }).catch(error => {
         props.onSubmit(null);
         props.onError(error.response.data.message);
