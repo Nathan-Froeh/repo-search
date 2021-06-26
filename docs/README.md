@@ -6,7 +6,7 @@
 
 3) run terminal command ```npm i```
 
-4) Run terminal command ```npm start``` to run the app, a new browser window should pop up at url `http://localhost:3000/`
+4) Run terminal command ```npm start``` to run the app, a new browser window should pop up at url `http://localhost:3000/repo-search/`
 
 
 ## Required api call documentation
