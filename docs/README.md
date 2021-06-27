@@ -21,7 +21,7 @@ API call `https://api.github.com/search/repositories`
 - [x] Search Input to search GitHub
 - [x] Display a list of search results from `https://api.github.com/search/repositories`
 - [x] Sort search results
-- [x] Filter search results (the api call specified does not have a language parameter available so if 30 items come back but only 2 have the language you are looking for, you will only see 2 items)
+- [x] Filter search results
 - [x] Repo detail page, selecting a repo from the list will take you to a repo detail page
 - [x] Responsive design, tested on iPhoneX, iPad, iPadPro, laptop, large computer monitor
 
